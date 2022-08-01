@@ -1,24 +1,25 @@
 <div class="container">
     <img [src]="food.imageurl" [alt]="food.name">
-</div>
-<div class="detailes">
-    <div class="header">
-        <span class="name">{{food.name}}</span>
-        <span class="fav {{food.fav?'':'not'}}"> ♥ </span>
-    </div>
-    <div class="star">
-        <ngb-rating [max]="5" [(rate)]="food.star" [readonly]="true"></ngb-rating>
-    </div>
-    <div class="origins">'
-        <span *ngFor="let origin of food.origins"> {{origin}} </span>
-    </div>
-    <div class="text">
-        <app-tags [foodPagetag]="food.tags"></app-tags>
-    </div>
-    <div class="cookTime">
-        <span> Time to cook About {{food.cookTime}}</span>
-    </div>
-    <div class="price">
-        <span></span>
+    <div class="detailes">
+        <div class="header">
+            <span class="name">{{food.name}}</span>
+            <span class="fav {{food.fav?'':'not'}}"> ♥ </span>
+        </div>
+        <div class="star">
+            <ngb-rating [max]="5" [(rate)]="food.star" [readonly]="true"></ngb-rating>
+        </div>
+        <div class="origins">
+            <span *ngFor="let origin of food.origins"> {{origin}} </span>
+        </div>
+        <div class="text">
+            <app-tags [foodPagetag]="food.tags" justfyContent="start"></app-tags>
+        </div>
+        <div class="cookTime">
+            <span> Time to cook About {{food.cookTime}}</span>
+        </div>
+        <div class="price">
+            <span>{{food.price | currency:'INR'}}</span>
+        </div>
+        <button>Add to cart</button>
     </div>
 </div>

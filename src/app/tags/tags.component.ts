@@ -10,6 +10,9 @@ import { tag } from '../shared/models/tag'
 export class TagsComponent implements OnInit {
   @Input()
   foodPagetag ?: string[]
+
+  @Input()
+  justfyContent : string = 'center'
     tags : tag[] = [];
   constructor(private fs : FoodserviceService) { }
   
